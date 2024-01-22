@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const getCurrentUTCTime = require('../UTCTime')
 
 
 const postSchema = new mongoose.Schema({

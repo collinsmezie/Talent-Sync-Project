@@ -3,12 +3,6 @@ const Post = require('../models/post');
 const moment = require('moment');
 
 
-// {
- 
-//     "title": "Talent Sync",
-//     "author": "collins chime",
-//     "content": "Talent sync is a talent pool, with an amazing strategy to source for the best talents locally, helping them find opportunities everywhere, but unfortunately I dont have 2 dollars"
-//  }
 
 // Get all Posts using mongoose ORM methods
 async function getAllPosts(req, res) {
