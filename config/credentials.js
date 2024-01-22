@@ -1,1 +1,0 @@
-JWT_SECRET="JSJKJHF^5Q**40598@$%^&*fJfsSjfzjfoJHH:Jjfhh"
