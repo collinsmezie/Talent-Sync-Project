@@ -33,21 +33,21 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
   - `200 OK`: The user was created successfully. The response includes the newly created user's data.
 
     ```json
-    {
-     
+    { 
   "message": "Signup successful",
   "user": {
     "email": "ekene@gmail.com",
     "password": "$2b$10$cE3VupizVrPSc55vhKlUbO6Uq9NszN6kdmmpMz3BDfGqfAUHhexr2",
     "_id": "65af7682000aab2dbaa4bb56"
         }
-
     }
     ```
 
   - `400 Bad Request`: Email already taken.
-  - `400 Bad Request`: Missing credentials or password is too short"
-  - `500 Internal Server Error`: An error occurred while creating the user.
+  - `400 Bad Request`: Missing credentials or password is too short
+  - `500 Internal Server Error`: An error occurred while creating the user
+
+
 
 
 ### 2. Login - Login Existing User
@@ -63,7 +63,6 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     {
     "message": "Login successful",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YWVhNDc0YWE1ZTNhYzI1YjcyMWVkZiIsImVtYWlsIjoiY29sbGluc0BnbWFpb"
-  
     }
     ```
 
