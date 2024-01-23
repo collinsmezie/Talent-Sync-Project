@@ -50,14 +50,14 @@ passport.use(
   
           // Check if user is not found
           if (!user) {
-            return done(null, false, { message: 'User not found' });
+            return done(null, false, { message: 'You dont have an account yet - Please Signup' });
           }
   
           const validate = await user.isValidPassword(password);
   
           // Check if password is incorrect
           if (!validate) {
-            return done(null, false, { message: 'Wrong Password' });
+            return done(null, false, { message: 'Incorrect Password, Try Again' });
           }
   
           return done(null, user, { message: 'Logged in Successfully' });

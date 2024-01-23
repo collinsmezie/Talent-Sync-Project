@@ -4,7 +4,7 @@ const moment = require('moment');
 
 
 
-// Get all Posts using mongoose ORM methods
+// Get all Posts 
 async function getAllPosts(req, res) {
     try {
         const posts = await Post.find();
@@ -14,12 +14,12 @@ async function getAllPosts(req, res) {
     }
 }
 
-// Get a Post by id using mongoose ORM methods
+// Get a Post by id 
 async function getPostById(req, res) {
     try {
         const post = await Post.findById(req.params.id);
         if (!post) {
-            return res.status(404).json({ error: 'Post not found' });
+            return res.status(404).json({ error: 'No Post with that ID was found' });
         }
         res.json(post);
     } catch (error) {
@@ -27,7 +27,7 @@ async function getPostById(req, res) {
     }
 }
 
-// Create a Post using mongoose ORM methods
+// Create a Post 
 async function createPost(req, res) {
     try {
         const { title, author, content, created, updated } = req.body;
@@ -41,7 +41,7 @@ async function createPost(req, res) {
             updated: null
         });
         if (!post) {
-            return res.status(400).json({ error: 'Bad request' });
+            return res.status(400).json({ error: 'Bad request: check post format' });
         }
         await post.save();
         res.status(201).json(post);
@@ -50,7 +50,7 @@ async function createPost(req, res) {
     }
 }
 
-// Update a Post using mongoose ORM methods
+// Update a Post 
 async function updatePost(req, res) {
     try {
         // const currentTime = moment().format('DD-MM-YYYY HH:mm:ss');
@@ -68,7 +68,7 @@ async function updatePost(req, res) {
             { new: true }
         );
         if (!post) {
-            return res.status(404).json({ error: 'Post not found' });
+            return res.status(404).json({ error: 'No Post with that ID was found' });
         }
         res.json(post);
     } catch (error) {
@@ -76,12 +76,12 @@ async function updatePost(req, res) {
     }
 }
 
-// Delete a Post using mongoose ORM methods
+// Delete a Post 
 async function deletePost(req, res) {
     try {
         const post = await Post.findByIdAndDelete(req.params.id);
         if (!post) {
-            return res.status(404).json({ error: 'Post not found' });
+            return res.status(404).json({ error: 'Post not found, as it may have already been deleted' });
         }
         res.json({ message: 'Post deleted successfully' });
     } catch (error) {

@@ -14,6 +14,7 @@ This documentation outlines the usage of the TalentSync Blog REST API. The API a
 ## API Base URL
 
 The base URL for all API endpoints is https://talentsync-api.onrender.com
+Send Requests from your favorite API clients like Postman and Thunderclient
 
 ## Standard Formats for Requests and Responses
 

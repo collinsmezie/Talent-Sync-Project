@@ -14,7 +14,7 @@ authRouter.post('/signup', (req, res, next) => {
       if (!user) {
         // Custom handling for duplicate key error
         if (info && info.message === 'Email already taken') {
-          return res.status(400).json({ Message: 'Email already taken' });
+          return res.status(400).json({ Message: 'This Email is already registered' });
         }
         // handle misssing fields error
         if (info && info.message === 'Missing credentials') {
@@ -27,7 +27,7 @@ authRouter.post('/signup', (req, res, next) => {
   
       // If authentication succeeds, you can handle it here
       res.json({
-        message: 'Signup successful',
+        message: 'Signup successful, You can now login with your credentials',
         user: req.user
       });
     })(req, res, next);
