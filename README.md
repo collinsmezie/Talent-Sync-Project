@@ -113,12 +113,12 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     {
-        "_id": "65aea621aa5e3ac25b721ee6",
-        "title": "Ruby on rails",
-        "author": "Berners Lee",
-        "content": "ROR is a web development framework",
-        "created": "22-01-2024 17:30:09",
-        "updated": "22-01-2024 17:31:57"
+      "_id": "65aea621aa5e3ac25b721ee6",
+      "title": "Ruby on rails",
+      "author": "Berners Lee",
+      "content": "ROR is a web development framework",
+      "created": "22-01-2024 17:30:09",
+      "updated": "22-01-2024 17:31:57"
     }
     ```
 
@@ -140,9 +140,9 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 - **Request Body:** The post data 
 ```json
     {
-        "title": "Fantasy Grill",
-        "author": "Mira",
-        "content": "Once upon a time... The end"
+      "title": "Fantasy Grill",
+      "author": "Mira", 
+      "content": "Once upon a time... The end"
     }
 
 ```
@@ -178,18 +178,20 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
   - `200 OK`: The Post was updated successfully.
 
     ```json
-  {
-     "_id": "65afbd163b93aa94cd67cadc",
-     "title": "Fantasy Grill",
-     "author": "Mira Sonya",
-     "content": "Once upon a time... The end",
-     "created": "23-01-2024 14:20:22",
-     "updated": "23-01-2024 14:22:20",
-     "__v": 0
-  }
+    {
+      "_id": "65afbd163b93aa94cd67cadc",
+      "title": "Fantasy Grill",
+      "author": "Mira Sonya",
+      "content": "Once upon a time... The end",
+      "created": "23-01-2024 14:20:22",
+      "updated": "23-01-2024 14:22:20",
+      "__v": 0
+    }
     ```
 
+
   - `404 Not Found`: The Post with the specified ID does not exist.
+
 
     ```json
     {
