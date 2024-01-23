@@ -59,7 +59,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     ```json
     {
     "message": "Login successful",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YWVhNDc0YWE1ZTNhYzI1YjcyMWVkZiIsImVtYWlsIjoiY29sbGluc0BnbWFpb"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....."
     }
     ```
 
@@ -86,21 +86,24 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     "content": "Server is running on port 5000 Connected to MongoDB Successfully",
     "created": "22-01-2024 17:35:23",
     "updated": "22-01-2024 17:27:21"
-  },
-  {
+      },
+      {
     "_id": "65aea621aa5e3ac25b721ee6",
     "title": "Ruby on rails",
     "author": "Berners Lee",
     "content": "ROR is a web development framework",
     "created": "22-01-2024 17:30:09",
     "updated": "22-01-2024 17:31:57"
-  }
+      }
     }
     ```
 
   - `500 Internal Server Error`: An error occurred while fetching the posts.
 
+
+
   ## JWT Protected Routes
+  
 
   ### 4. Get Post by ID
 
