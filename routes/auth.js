@@ -28,7 +28,7 @@ authRouter.post('/signup', (req, res, next) => {
       // If authentication succeeds, you can handle it here
       res.json({
         message: 'Signup successful, You can now login with your credentials',
-        user: req.user
+        user: user
       });
     })(req, res, next);
   });
