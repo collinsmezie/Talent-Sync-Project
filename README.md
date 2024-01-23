@@ -35,7 +35,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     ```json
     { 
 
-    "message": "Signup successful"
+      "message": "Signup successful"
   
     }
     ```
@@ -151,13 +151,12 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     {
-        "title": "Fantasy Grill",
-        "author": "Mira",
-        "content": "Once upon a time... The end",
-        "created": "23-01-2024 14:20:22",
-        "updated": null,
-        "_id": "65afbd163b93aa94cd67cadc",
-        "__v": 0
+      "title": "Fantasy Grill",
+      "author": "Mira",
+      "content": "Once upon a time... The end",
+      "created": "23-01-2024 14:20:22",
+      "updated": null,
+      "_id": "65afbd163b93aa94cd67cadc"
     }
     ```
 
@@ -170,7 +169,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 - **Request Body:** The updated post fields.
 ```json
 {
-    "author": "Mira Sonya"
+  "author": "Mira Sonya"
 }
 
 ```
@@ -270,9 +269,9 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     
 ```json
 {
-    "title": "Kotlin",
-    "author": "Andrew NG",
-    "content": "A dynamic language"
+  "title": "Kotlin",
+  "author": "Andrew NG",
+  "content": "A dynamic language"
 }
 ```
 
