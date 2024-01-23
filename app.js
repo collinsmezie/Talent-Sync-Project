@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const postsRouter = require('./routes/posts');
 const cors = require('cors');
@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Middleware for authentication
 app.use('/', authRoute);
+
 app.use('/api', postsRouter);
 
 

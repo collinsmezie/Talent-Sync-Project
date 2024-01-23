@@ -27,32 +27,48 @@ passport.use(
 
 
 
-passport.use(
+  passport.use(
     'login',
     new LocalStrategy(
-        {
-            usernameField: 'email',
-            passwordField: 'password'
-        },
-        async (email, password, done) => {
-            try {
-                console.log("IN PASSPORT LOGIN")
-
-                const user = await UserModel.findOne({ email });
-                if (!user) {
-                    return done(null, false, { message: 'User not found' });
-                }
-                const validate = await user.isValidPassword(password);
-                if (!validate) {
-                    return done(null, false, { message: 'Wrong Password' });
-                }
-                return done(null, user, { message: 'Logged in Successfully' });
-            } catch (error) {
-                return done(error);
-            }
+      {
+        usernameField: 'email',
+        passwordField: 'password',
+      },
+      async (email, password, done) => {
+        try {
+          // Check if email is missing
+          if (!email) {
+            return done(null, false, { message: 'Email is required' });
+          }
+  
+          // Check if password is missing
+          if (!password) {
+            return done(null, false, { message: 'Password is required' });
+          }
+  
+          const user = await UserModel.findOne({ email });
+  
+          // Check if user is not found
+          if (!user) {
+            return done(null, false, { message: 'User not found' });
+          }
+  
+          const validate = await user.isValidPassword(password);
+  
+          // Check if password is incorrect
+          if (!validate) {
+            return done(null, false, { message: 'Wrong Password' });
+          }
+  
+          return done(null, user, { message: 'Logged in Successfully' });
+        } catch (error) {
+          return done(error);
         }
+      }
     )
-);
+  );
+  
+  
 
 
 
@@ -66,11 +82,17 @@ passport.use(
         },
         async (email, password, done) => {
             try {
-                console.log("IN PASSPORT SIGNUP")
                 const user = await UserModel.create({ email, password });
                 return done(null, user);
             } catch (error) {
-                done(error);
+                if (error.code === 11000) {
+                    return done(null, false, { message: 'Email already taken' });
+                }
+                //missing fields
+                if (error.name === 'ValidationError') {
+                    return done(null, false, { message: 'Missing credentials' });
+                }
+                return done(error);
             }
         }
     )
