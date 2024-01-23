@@ -34,12 +34,9 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     { 
-  "message": "Signup successful",
-  "user": {
-    "email": "ekene@gmail.com",
-    "password": "$2b$10$cE3VupizVrPSc55vhKlUbO6Uq9NszN6kdmmpMz3BDfGqfAUHhexr2",
-    "_id": "65af7682000aab2dbaa4bb56"
-        }
+
+    "message": "Signup successful"
+  
     }
     ```
 
