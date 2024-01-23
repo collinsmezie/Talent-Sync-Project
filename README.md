@@ -35,7 +35,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     ```json
     { 
 
-    "message": "Signup successful"
+        "message": "Signup successful"
   
     }
     ```
@@ -58,8 +58,8 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     {
-    "message": "Login successful",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....."
+        "message": "Login successful",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....."
     }
     ```
 
@@ -80,20 +80,20 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     ```json
     {
        {
-    "_id": "65ae994b4b50c29b4ec36134",
-    "title": "MongoDB",
-    "author": "Carmak J",
-    "content": "Server is running on port 5000 Connected to MongoDB Successfully",
-    "created": "22-01-2024 17:35:23",
-    "updated": "22-01-2024 17:27:21"
+        "_id": "65ae994b4b50c29b4ec36134",
+        "title": "MongoDB",
+        "author": "Carmak J",
+        "content": "Server is running on port 5000 Connected to MongoDB Successfully",
+        "created": "22-01-2024 17:35:23",
+        "updated": "22-01-2024 17:27:21"
       },
       {
-    "_id": "65aea621aa5e3ac25b721ee6",
-    "title": "Ruby on rails",
-    "author": "Berners Lee",
-    "content": "ROR is a web development framework",
-    "created": "22-01-2024 17:30:09",
-    "updated": "22-01-2024 17:31:57"
+        "_id": "65aea621aa5e3ac25b721ee6",
+        "title": "Ruby on rails",
+        "author": "Berners Lee",
+        "content": "ROR is a web development framework",
+        "created": "22-01-2024 17:30:09",
+        "updated": "22-01-2024 17:31:57"
       }
     }
     ```
@@ -103,7 +103,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
 
   ## JWT Protected Routes
-  
+
 
   ### 4. Get Post by ID
 
@@ -113,13 +113,13 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     {
-    "_id": "65aea621aa5e3ac25b721ee6",
-    "title": "Ruby on rails",
-    "author": "Berners Lee",
-    "content": "ROR is a web development framework",
-    "created": "22-01-2024 17:30:09",
-    "updated": "22-01-2024 17:31:57"
-  }
+        "_id": "65aea621aa5e3ac25b721ee6",
+        "title": "Ruby on rails",
+        "author": "Berners Lee",
+        "content": "ROR is a web development framework",
+        "created": "22-01-2024 17:30:09",
+        "updated": "22-01-2024 17:31:57"
+    }
     ```
 
   - `404 Not Found`: The post with the specified ID was not found.
@@ -132,16 +132,18 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
   - `500 Internal Server Error`: An error occurred while fetching the post.
 
- ### 4. Create New Post
+
+
+ ### 5. Create New Post
 
 - **Endpoint:** `POST /api/posts/`
 - **Request Body:** The post data 
 ```json
-{
-    "title": "Fantasy Grill",
-    "author": "Mira",
-    "content": "Once upon a time... The end"
-}
+    {
+        "title": "Fantasy Grill",
+        "author": "Mira",
+        "content": "Once upon a time... The end"
+    }
 
 ```
 - **Responses:**
@@ -149,20 +151,20 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
     {
-  "title": "Fantasy Grill",
-  "author": "Mira",
-  "content": "Once upon a time... The end",
-  "created": "23-01-2024 14:20:22",
-  "updated": null,
-  "_id": "65afbd163b93aa94cd67cadc",
-  "__v": 0
-  }
+        "title": "Fantasy Grill",
+        "author": "Mira",
+        "content": "Once upon a time... The end",
+        "created": "23-01-2024 14:20:22",
+        "updated": null,
+        "_id": "65afbd163b93aa94cd67cadc",
+        "__v": 0
+    }
     ```
 
   - `500 Internal Server Error`: An error occurred while creating the Post.
 
 
-### 5. Update Post by ID
+### 6. Update Post by ID
 
 - **Endpoint:** `PUT /api/posts/:postId`
 - **Request Body:** The updated post fields.
@@ -177,14 +179,14 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
     ```json
    {
-  "_id": "65afbd163b93aa94cd67cadc",
-  "title": "Fantasy Grill",
-  "author": "Mira Sonya",
-  "content": "Once upon a time... The end",
-  "created": "23-01-2024 14:20:22",
-  "updated": "23-01-2024 14:22:20",
-  "__v": 0
-  }
+        "_id": "65afbd163b93aa94cd67cadc",
+        "title": "Fantasy Grill",
+        "author": "Mira Sonya",
+        "content": "Once upon a time... The end",
+        "created": "23-01-2024 14:20:22",
+        "updated": "23-01-2024 14:22:20",
+        "__v": 0
+   }
     ```
 
   - `404 Not Found`: The Post with the specified ID does not exist.
@@ -197,7 +199,7 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
   - `500 Internal Server Error`: An error occurred while updating the Post.
 
-### 6. Delete Post by ID
+### 7. Delete Post by ID
 
 - **Endpoint:** `DELETE /api/posts/:postId`
 - **Responses:**
@@ -257,7 +259,23 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
     GET /api/posts
 
 
-5. Update Post by ID
+5. Create Posts
+
+    ```http
+    POST /api/posts
+    Content-Type: application/json
+
+    
+```json
+{
+    "title": "Kotlin",
+    "author": "Andrew NG",
+    "content": "A dynamic language"
+}
+```
+
+
+6. Update Post by ID
 
     ```http
     PUT /api/posts/5ffdb3b243454f35d8f41e12
@@ -265,11 +283,11 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 
 ```json
 {
-  "content": "Updated content"
+  "content": "A programming language"
 }
 ```
 
-6. Delete Post by ID
+7. Delete Post by ID
 
 ```http
 DELETE /api/posts/5ffdb3b243454f35d8f41e12
