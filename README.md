@@ -3,7 +3,7 @@
 
 ## Link to Database schema [UML Here](https://lucid.app/lucidchart/b7868ea9-a7b3-4cd7-b3b2-c3b98ecc706d/edit?beaconFlowId=2A536D39562C4F79&invitationId=inv_92f5173c-e32c-4a27-af7f-54e028ce5df5&page=0_0#)
 
-## Link to [UML Here](https://lucid.app/lucidchart/ed1e2be9-c5e6-4766-b212-27566feeb9ea/edit?invitationId=inv_3af95dc5-1f2d-4f44-9f80-11e19e18b99b&page=0_0#) for system design 
+## Link to [UML Here](https://lucid.app/lucidchart/ed1e2be9-c5e6-4766-b212-27566feeb9ea/edit?invitationId=inv_3af95dc5-1f2d-4f44-9f80-11e19e18b99b&page=0_0#) for API design 
 
 
 
@@ -39,9 +39,8 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
   "user": {
     "email": "ekene@gmail.com",
     "password": "$2b$10$cE3VupizVrPSc55vhKlUbO6Uq9NszN6kdmmpMz3BDfGqfAUHhexr2",
-    "_id": "65af7682000aab2dbaa4bb56",
-    "__v": 0
-  }
+    "_id": "65af7682000aab2dbaa4bb56"
+        }
 
     }
     ```
@@ -226,41 +225,55 @@ The base URL for all API endpoints is https://talentsync-api.onrender.com
 1. Create a New User
 
    ```http
-   POST /api/add_user
+   POST /signup
    Content-Type: application/json
 
    {
-     "name": "John Doe"
+     "email": "ekene@gmail.com",
+     "password": "ekene123"
+   }
+
+   
+2. Login existing User
+
+   ```http
+   POST /login
+   Content-Type: application/json
+
+   {
+     "email": "ekene@gmail.com",
+     "password": "ekene123"
    }
 
 
-2. Get User by ID
+3. Get Post by ID
 
    ```http
-   GET /api/users/5ffdb3b243454f35d8f41e12
-
-3. Get All Users
-
-    ```http
-    GET /api/users
+   GET /api/posts/5ffdb3b243454f35d8f41e12
 
 
-4. Update User by ID
+4. Get All Posts
 
     ```http
-    PUT /api/users/5ffdb3b243454f35d8f41e12
+    GET /api/posts
+
+
+5. Update Post by ID
+
+    ```http
+    PUT /api/posts/5ffdb3b243454f35d8f41e12
     Content-Type: application/json
 
 ```json
 {
-  "name": "Updated Name"
+  "content": "Updated content"
 }
 ```
 
-5. Delete User by ID
+6. Delete Post by ID
 
 ```http
-DELETE /api/users/5ffdb3b243454f35d8f41e12
+DELETE /api/posts/5ffdb3b243454f35d8f41e12
 ```
 
 
@@ -268,8 +281,9 @@ DELETE /api/users/5ffdb3b243454f35d8f41e12
 
 ## Known Limitations and Assumptions
 
+- The initial loading time may take longer due to occasional server spin down (Free hosting)
 - The API assumes a MongoDB database is set up and running.
-- The API does not include authentication or authorization mechanisms.
+- The API does include authentication/authorization mechanisms.
 
 ## Setting Up and Deploying the API
 
@@ -289,4 +303,4 @@ DELETE /api/users/5ffdb3b243454f35d8f41e12
 3. Deploy the API code to the server.
 4. Update the `uri` variable in the code with your production MongoDB connection URI.
 5. Start the API on the server.
-6. Your API will be available at the server's URL.
+6. The API will be available at the server's URL.
