@@ -34,11 +34,14 @@ Send Requests from your favorite API clients like Postman and Thunderclient
   - `200 OK`: The user was created successfully. The response includes the newly created user's data.
 
     ```json
-    { 
-
-      "message": "Signup successful"
-  
-    }
+    {
+      "message": "Signup successful, You can now login with your credentials",
+      "user": {
+      "email": "collins@gmail.com",
+      "password": "$2b$10$TVq0l9GpMX06uGgGwL7B7eTVwkRB3z.igBa8v2qF0SYm.bjBzVkEW",
+      "_id": "65b13cf35ddf55ea8b77fd4a"
+      }
+   }
     ```
 
   - `400 Bad Request`: Email already taken.
