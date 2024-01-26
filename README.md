@@ -134,6 +134,7 @@ Send Requests from your favorite API clients like Postman and Thunderclient
     }
     ```
 
+  - `401 Unauthorized`: Unauthorized
   - `500 Internal Server Error`: An error occurred while fetching the post.
 
 
@@ -163,7 +164,7 @@ Send Requests from your favorite API clients like Postman and Thunderclient
       "_id": "65afbd163b93aa94cd67cadc"
     }
     ```
-
+  - `401 Unauthorized`: Unauthorized
   - `500 Internal Server Error`: An error occurred while creating the Post.
 
 
@@ -201,7 +202,7 @@ Send Requests from your favorite API clients like Postman and Thunderclient
       "error": "Post not found"
     }
     ```
-
+  - `401 Unauthorized`: Unauthorized
   - `500 Internal Server Error`: An error occurred while updating the Post.
 
 ### 7. Delete Post by ID
@@ -223,7 +224,7 @@ Send Requests from your favorite API clients like Postman and Thunderclient
       "error": "Post not found"
     }
     ```
-
+  - `401 Unauthorized`: Unauthorized
   - `500 Internal Server Error`: An error occurred while deleting the Post.
 
 ## Sample Usage
